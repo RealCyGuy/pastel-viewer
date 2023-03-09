@@ -1,0 +1,18 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.v-popper__popper {
+  @apply !z-20;
+}
+.v-popper--theme-custom-tooltip-higher {
+  @apply !z-40;
+}
+
+.v-popper--theme-custom-tooltip .v-popper__inner {
+  @apply px-3 py-2 bg-pastel-purple rounded text-sm text-white;
+}
+
+.v-popper--theme-custom-tooltip .v-popper__arrow-outer {
+  @apply border-pastel-purple;
+}
