@@ -1,7 +1,7 @@
 <template>
   <span
     v-if="tag"
-    class="text-white rounded px-2 py-0.5 ml-1 inline-block"
+    class="text-white rounded px-2 py-0.5 inline-block"
     :class="bg"
     >&ZeroWidthSpace;{{ tag }}</span
   >

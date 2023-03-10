@@ -1,8 +1,8 @@
 <template>
   <div
-    class="flex py-3 px-3 sm:px-5 mb-2 bg-white relative shadow-lg rounded-lg border-2 border-black"
+    class="flex py-3 px-3 sm:px-5 mb-2 bg-white relative shadow-lg rounded-lg border-2"
     @click="$emit('messageClick', message.message_id)"
-    :class="selectedMessageId === message.message_id ? '' : 'border-opacity-0'"
+    :class="selectedMessageId === message.message_id ? 'border-black' : ''"
     :id="message.message_id"
   >
     <!-- <div class="bg-green-800 w-3 h-3 absolute top-0 right-0"></div> -->
@@ -13,14 +13,14 @@
     />
     <div class="flex flex-col justify-center w-full">
       <div class="text-xs sm:text-sm flex justify-between font-sans2">
-        <span>
-          <UserName :user="message.author" />
+        <span class="max-w-[50%]">
+          <UserName :user="message.author" class="mr-2" />
           <Tag :message="message" />
         </span>
         <!-- <span class="text-gray-800">
           {{ formatDate(date) }}
         </span> -->
-        <FormattedDate :date="date" />
+        <FormattedDate class="text-right" :date="date" />
         <!-- <VMenu class="inline-block" theme="custom-tooltip">
           <span class="text-gray-800">{{ formatDate(date) }}</span>
           <template #popper>
