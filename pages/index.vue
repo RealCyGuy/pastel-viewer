@@ -18,10 +18,3 @@
     </div>
   </div>
 </template>
-
-<script setup lang="ts">
-useServerSeoMeta({
-  title: "pastel-viewer",
-  description: "a minimal and serverless modmail logviewer built with nuxt 3",
-});
-</script>

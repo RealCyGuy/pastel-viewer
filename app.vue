@@ -17,4 +17,10 @@
 
 <script setup lang="ts">
 import "~/assets/css/styles.css";
+
+useServerSeoMeta({
+  title: "pastel-viewer",
+  description: "a minimal and serverless modmail logviewer built with nuxt 3",
+  themeColor: "#f8c8dc",
+});
 </script>
