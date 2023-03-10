@@ -71,7 +71,9 @@ useServerSeoMeta({
   title: `pastel-viewer | ${route.params.id}`,
   description: `Modmail logs (${data.open ? "open" : "closed"}) for ${
     data.recipient.name
-  }#${data.recipient.discriminator}.`,
+  }#${data.recipient.discriminator}. There are ${messageAmount} message${
+    messageAmount == 1 ? "" : "s"
+  }.`,
   ogImage: data.recipient.avatar_url,
 });
 </script>
