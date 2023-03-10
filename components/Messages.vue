@@ -4,7 +4,7 @@
       v-for="message in messages"
       :message="message"
       :selectedMessageId="selectedMessageId"
-      @messageClick="hello"
+      @messageClick="messageClick"
     />
   </div>
 </template>
@@ -18,7 +18,7 @@ defineProps<{
 
 const selectedMessageId = ref("");
 
-function hello(messageId: string) {
+function messageClick(messageId: string) {
   if (window.location.hash.slice(1) === messageId) {
     history.replaceState(null, "", window.location.pathname);
     selectedMessageId.value = "";
