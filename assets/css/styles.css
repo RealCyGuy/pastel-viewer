@@ -6,11 +6,7 @@
 }
 
 .v-popper--theme-custom-tooltip .v-popper__inner {
-  @apply px-3 py-2 bg-pastel-purple rounded text-sm text-white;
-}
-
-.v-popper--theme-custom-tooltip .v-popper__arrow-outer {
-  @apply border-pastel-purple;
+  @apply px-3 py-2 bg-white rounded text-sm text-black shadow-md border-2;
 }
 
 img.emoji {
