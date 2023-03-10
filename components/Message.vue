@@ -38,7 +38,7 @@
         </VMenu> -->
       </div>
       <!-- discord uses white-space: pre-line in embeds hiding extra spacing -->
-      <p class="break-all whitespace-pre-line">
+      <p class="break-all whitespace-pre-line" ref="content">
         {{ message.content
         }}<span v-if="message.edited" class="text-xs text-gray-700">
           (edited)</span
@@ -49,6 +49,8 @@
 </template>
 
 <script setup lang="ts">
+import twemoji from "twemoji";
+
 import { IMessage } from "~/models/LogModel";
 
 defineEmits<{
@@ -61,4 +63,9 @@ const props = defineProps<{
 }>();
 
 const date = new Date(props.message.timestamp);
+
+const content = ref();
+onMounted(() => {
+  twemoji.parse(content.value);
+});
 </script>

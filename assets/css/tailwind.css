@@ -16,3 +16,7 @@
 .v-popper--theme-custom-tooltip .v-popper__arrow-outer {
   @apply border-pastel-purple;
 }
+
+img.emoji {
+  @apply inline h-[1em] w-[1em] mr-[0.05em] ml-[0.1em] align-[-0.1em];
+}
