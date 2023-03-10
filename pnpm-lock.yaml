@@ -1,6 +1,7 @@
 lockfileVersion: 5.4
 
 specifiers:
+  '@imengyu/vue3-context-menu': ^1.2.3
   '@nuxtjs/google-fonts': ^3.0.0-1
   '@nuxtjs/tailwindcss': ^6.4.1
   floating-vue: 2.0.0-beta.20
@@ -10,6 +11,7 @@ specifiers:
   twemoji: ^14.0.2
 
 dependencies:
+  '@imengyu/vue3-context-menu': 1.2.3
   floating-vue: 2.0.0-beta.20
   mongoose: 7.0.0
   twemoji: 14.0.2
@@ -1108,6 +1110,10 @@ packages:
     resolution: {integrity: sha512-4kAVoogvQm2N0XE0G6APQJuCNuErjOfPW8Ux7DFxh8+AfugWflwVJ5LDlHOwrwut7z/30NUvdtHzQ3zSip4EzQ==}
     dependencies:
       '@floating-ui/core': 0.3.1
+    dev: false
+
+  /@imengyu/vue3-context-menu/1.2.3:
+    resolution: {integrity: sha512-DhEJ6zJbwjiKgL3faNoFaSrmJNzYssO4VfvHVnKMMzu3/XN/NnnJUjy8Q95l4AmB26Ddbc5PZ4qwHkFQ2gWRMg==}
     dev: false
 
   /@ioredis/commands/1.2.0:

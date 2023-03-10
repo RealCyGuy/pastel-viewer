@@ -4,6 +4,7 @@
     @click="$emit('messageClick', message.message_id)"
     :class="selectedMessageId === message.message_id ? 'border-gray-500' : ''"
     :id="message.message_id"
+    @contextmenu="onContextMenu"
   >
     <!-- <div class="bg-green-800 w-3 h-3 absolute top-0 right-0"></div> -->
     <img
@@ -50,6 +51,7 @@
 
 <script setup lang="ts">
 import twemoji from "twemoji";
+import ContextMenu from "@imengyu/vue3-context-menu";
 
 import { IMessage } from "~/models/LogModel";
 
@@ -68,4 +70,36 @@ const content = ref();
 onMounted(() => {
   twemoji.parse(content.value);
 });
+
+function onContextMenu(e: MouseEvent) {
+  const element = e.target as HTMLElement;
+  if (element.tagName === "IMG") {
+    return;
+  }
+
+  // check if text is selected
+  if (window.getSelection()?.toString()) {
+    return;
+  }
+
+  e.preventDefault();
+  ContextMenu.showContextMenu({
+    x: e.x,
+    y: e.y,
+    items: [
+      {
+        label: "Copy Message Text",
+        onClick: () => {
+          navigator.clipboard.writeText(props.message.content);
+        },
+      },
+      {
+        label: "Copy ID",
+        onClick: () => {
+          navigator.clipboard.writeText(props.message.message_id);
+        },
+      },
+    ],
+  });
+}
 </script>

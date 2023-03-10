@@ -16,5 +16,5 @@
 </template>
 
 <script setup lang="ts">
-import "floating-vue/dist/style.css";
+import "~/assets/css/styles.css";
 </script>
