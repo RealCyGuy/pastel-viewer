@@ -100,4 +100,4 @@ const logsSchema = new Schema<ILogs>({
 const LogModel = model("Logs", logsSchema);
 
 export default LogModel;
-export { ILogs, IUser, IMessage };
+export { ILogs, IUser, IMessage, IAttachment };

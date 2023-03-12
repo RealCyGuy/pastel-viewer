@@ -18,27 +18,13 @@
           <UserName :user="message.author" class="mr-2" />
           <Tag :message="message" />
         </span>
-        <!-- <span class="text-gray-800">
-          {{ formatDate(date) }}
-        </span> -->
         <FormattedDate class="text-right" :date="date" />
-        <!-- <VMenu class="inline-block" theme="custom-tooltip">
-          <span class="text-gray-800">{{ formatDate(date) }}</span>
-          <template #popper>
-            <span>{{
-              date.toLocaleString("en-US", {
-                weekday: "long",
-                year: "numeric",
-                month: "long",
-                day: "numeric",
-                hour: "numeric",
-                minute: "numeric",
-              })
-            }}</span>
-          </template>
-        </VMenu> -->
       </div>
       <MessageContent :message="message"></MessageContent>
+      <Attachment
+        v-for="attachment in message.attachments"
+        :attachment="attachment"
+      />
     </div>
   </div>
 </template>
