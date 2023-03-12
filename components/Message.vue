@@ -32,7 +32,7 @@
 <script setup lang="ts">
 import ContextMenu from "@imengyu/vue3-context-menu";
 
-import { ILogs, IMessage } from "~/models/LogModel";
+import { IMessage } from "~/models/LogModel";
 
 defineEmits<{
   messageClick: (messageId: string) => void;
