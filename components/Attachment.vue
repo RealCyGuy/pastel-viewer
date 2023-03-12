@@ -1,13 +1,14 @@
 <template>
-  <NuxtLink v-if="attachment.is_image" :to="attachment.url">
-    <img :src="attachment.url" :alt="attachment.filename" />
-  </NuxtLink>
-  <p v-else>
-    Attachment:
-    <StyledLink :to="attachment.url">{{ attachment.filename }}</StyledLink> ({{
-      size
-    }})
-  </p>
+  <div>
+    <p>
+      Attachment:
+      <StyledLink :to="attachment.url">{{ attachment.filename }}</StyledLink>
+      ({{ size }})
+    </p>
+    <NuxtLink v-if="attachment.is_image" :to="attachment.url">
+      <img :src="attachment.url" :alt="attachment.filename" />
+    </NuxtLink>
+  </div>
 </template>
 
 <script setup lang="ts">
