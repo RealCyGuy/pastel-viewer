@@ -4,6 +4,7 @@
       v-for="message in messages"
       :message="message"
       :selectedMessageId="selectedMessageId"
+      :messageLink="messageLink"
       @messageClick="messageClick"
     />
   </div>
@@ -14,6 +15,7 @@ import { IMessage } from "~~/models/LogModel";
 
 defineProps<{
   messages: IMessage[];
+  messageLink: string;
 }>();
 
 const selectedMessageId = ref("");

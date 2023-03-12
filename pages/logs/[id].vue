@@ -34,9 +34,12 @@
       </div>
     </div>
     <SectionTitle>Messages</SectionTitle>
-    <Messages :messages="data.messages" />
     <!-- <SectionTitle>Stats</SectionTitle>
     <p>some stats</p> -->
+    <Messages
+      :messages="data.messages"
+      :messageLink="`https://discord.com/channels/${data.guild_id}/${data.channel_id}/`"
+    />
   </div>
 </template>
 

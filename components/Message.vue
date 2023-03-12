@@ -32,7 +32,7 @@
 <script setup lang="ts">
 import ContextMenu from "@imengyu/vue3-context-menu";
 
-import { IMessage } from "~/models/LogModel";
+import { ILogs, IMessage } from "~/models/LogModel";
 
 defineEmits<{
   messageClick: (messageId: string) => void;
@@ -41,6 +41,7 @@ defineEmits<{
 const props = defineProps<{
   message: IMessage;
   selectedMessageId: string;
+  messageLink: string;
 }>();
 
 const date = new Date(props.message.timestamp);
@@ -71,6 +72,15 @@ function onContextMenu(e: MouseEvent) {
         label: "Copy ID",
         onClick: () => {
           navigator.clipboard.writeText(props.message.message_id);
+        },
+      },
+      {
+        label: "Copy Link",
+        onClick: () => {
+          console.log(props.messageLink + props.message.message_id);
+          navigator.clipboard.writeText(
+            props.messageLink + props.message.message_id
+          );
         },
       },
     ],

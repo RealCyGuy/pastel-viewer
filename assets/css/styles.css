@@ -20,3 +20,7 @@
 .mx-menu-ghost-host {
   @apply fixed;
 }
+
+.mx-context-menu-item {
+  @apply cursor-pointer;
+}
