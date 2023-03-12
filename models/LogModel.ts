@@ -36,7 +36,7 @@ interface IMessage {
   timestamp: string;
   message_id: string;
   author: IUser;
-  content: string;
+  content?: string;
   type: string;
   attachments: IAttachment[];
   edited?: boolean;
@@ -46,7 +46,7 @@ const messageSchema = new Schema<IMessage>({
   timestamp: { type: String, required: true },
   message_id: { type: String, required: true },
   author: { type: userSchema, required: true },
-  content: { type: String, required: true },
+  content: { type: String, required: false },
   type: { type: String, required: true },
   attachments: { type: [attachmentSchema], required: true },
   edited: { type: Boolean, required: false },

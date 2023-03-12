@@ -38,19 +38,12 @@
           </template>
         </VMenu> -->
       </div>
-      <!-- discord uses white-space: pre-line in embeds hiding extra spacing -->
-      <p class="break-all whitespace-pre-line" ref="content">
-        {{ message.content
-        }}<span v-if="message.edited" class="text-xs text-gray-700">
-          (edited)</span
-        >
-      </p>
+      <MessageContent :message="message"></MessageContent>
     </div>
   </div>
 </template>
 
 <script setup lang="ts">
-import twemoji from "twemoji";
 import ContextMenu from "@imengyu/vue3-context-menu";
 
 import { IMessage } from "~/models/LogModel";
@@ -66,14 +59,9 @@ const props = defineProps<{
 
 const date = new Date(props.message.timestamp);
 
-const content = ref();
-onMounted(() => {
-  twemoji.parse(content.value);
-});
-
 function onContextMenu(e: MouseEvent) {
   const element = e.target as HTMLElement;
-  if (element.tagName === "IMG") {
+  if (element.tagName === "IMG" || element.tagName === "A") {
     return;
   }
 
@@ -90,7 +78,7 @@ function onContextMenu(e: MouseEvent) {
       {
         label: "Copy Message Text",
         onClick: () => {
-          navigator.clipboard.writeText(props.message.content);
+          navigator.clipboard.writeText(props.message.content ?? "");
         },
       },
       {

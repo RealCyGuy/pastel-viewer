@@ -21,9 +21,7 @@
       <div>
         Id: <span class="select-all">{{ route.params.id }}</span>
       </div>
-      <div>
-        Opened: <FormattedDate :date="new Date(data.messages[0].timestamp)" />
-      </div>
+      <div>Opened: <FormattedDate :date="new Date(data.created_at)" /></div>
       <div v-if="!data.open">
         Closed:
         <FormattedDate :date="new Date(data.closed_at)"></FormattedDate>

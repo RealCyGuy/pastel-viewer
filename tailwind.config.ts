@@ -6,6 +6,7 @@ export default <Partial<Config>>{
       fontFamily: {
         sans: ["Nunito sans", "ui-sans-serif", "sans-serif"],
         sans2: ["Rubik", "sans-serif"],
+        mono: ["JetBrains Mono", "ui-monospace", "monospace"],
       },
       colors: {
         pastel: {

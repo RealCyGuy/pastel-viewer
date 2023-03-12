@@ -9,10 +9,6 @@
   @apply px-3 py-2 bg-white rounded text-sm text-black shadow-md border-2;
 }
 
-img.emoji {
-  @apply inline h-[1em] w-[1em] mr-[0.05em] ml-[0.1em] align-[-0.1em];
-}
-
 .mx-context-menu {
   @apply font-sans2 border-2;
 }
