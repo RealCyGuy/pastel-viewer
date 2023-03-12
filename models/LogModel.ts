@@ -66,7 +66,7 @@ interface ILogs {
   closer?: IUser;
   messages: IMessage[];
   close_message?: string;
-  nsfw: boolean;
+  nsfw?: boolean;
   title?: string;
 }
 
@@ -93,7 +93,7 @@ const logsSchema = new Schema<ILogs>({
   },
   messages: { type: [messageSchema], required: true },
   close_message: { type: String, required: false },
-  nsfw: { type: Boolean, required: true },
+  nsfw: { type: Boolean, required: false },
   title: { type: String, required: false },
 });
 

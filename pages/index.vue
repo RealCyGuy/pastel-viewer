@@ -1,6 +1,6 @@
 <template>
   <div
-    class="h-full flex-col mx-5 sm:mx-12 md:mx-20 font-sans2 mt-20 sm:mt-24 md:mt-40"
+    class="flex-col mx-5 sm:mx-12 md:mx-20 font-sans2 mt-20 sm:mt-24 md:mt-40"
   >
     <h1 class="text-4xl mb-5">pastel-viewer</h1>
     <h2 class="text-2xl leading-tight">
