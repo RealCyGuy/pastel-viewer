@@ -7,6 +7,12 @@
       <StyledLink to="https://github.com/realcyguy/pastel-viewer"
         >pastel-viewer</StyledLink
       >
+      &nbsp;<StyledLink
+        :to="
+          'https://github.com/RealCyGuy/pastel-viewer/releases/tag/v' + version
+        "
+        >v{{ version }}</StyledLink
+      >
       &nbsp;by&nbsp;
       <StyledLink to="https://realcyguy.netlify.app">cyrus yip</StyledLink>
     </footer>
@@ -15,6 +21,8 @@
 
 <script setup lang="ts">
 import "~/assets/css/styles.css";
+
+const version = useRuntimeConfig().public.version;
 
 useServerSeoMeta({
   title: "pastel-viewer",
