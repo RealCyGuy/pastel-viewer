@@ -49,11 +49,14 @@ props.log.messages?.forEach((message) => {
     counted++;
   }
 
-  const type =
-    message.type === "thread_message" && message.author.mod
-      ? "reply"
-      : message.type;
-  messageTypes[type] = (messageTypes[type] || 0) + 1;
+  if (message.type !== "close") {
+    const type =
+      (message.type === "thread_message" && message.author.mod) ||
+      message.type === "anonymous"
+        ? "reply"
+        : message.type;
+    messageTypes[type] = (messageTypes[type] || 0) + 1;
+  }
 
   if (message.type === "thread_message") {
     totalThreadMessageLength += message.content?.length || 0;
@@ -89,10 +92,6 @@ const messageTypesRemapped: any = {
     label: "Recipient",
     backgroundColor: "#34D399",
   },
-  anonymous: {
-    label: "Anonymous reply",
-    backgroundColor: "#FCD34D",
-  },
   internal: {
     label: "Internal message",
     backgroundColor: "#FBBF24",
@@ -100,10 +99,6 @@ const messageTypesRemapped: any = {
   system: {
     label: "Note",
     backgroundColor: "#3B82F6",
-  },
-  close: {
-    label: "Close message",
-    backgroundColor: "#EF4444",
   },
 };
 
