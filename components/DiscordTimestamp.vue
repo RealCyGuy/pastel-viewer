@@ -93,7 +93,7 @@ if (props.timestamp.format === "R") {
 } else {
   formattedDate.value = date
     .toLocaleString(
-      undefined,
+      "en-US",
       DATE_TYPE_FORMATS[format] as Intl.DateTimeFormatOptions
     )
     .replace("at ", "");
