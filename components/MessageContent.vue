@@ -7,7 +7,7 @@
 </template>
 
 <script setup lang="ts">
-import { parse, RuleTypesExtended } from "discord-markdown-parser";
+import { RuleTypesExtended } from "discord-markdown-parser";
 import { type SingleASTNode } from "simple-markdown";
 
 import { IMessage } from "~~/models/LogModel";
@@ -28,7 +28,7 @@ const props = defineProps<{
   message: IMessage;
 }>();
 
-const nodes = parse(props.message.content ?? "", "extended");
+const nodes = parseDiscordMarkdown(props.message.content ?? "");
 
 const render = () => {
   return nodes.map((node) => {
