@@ -42,7 +42,7 @@ function getComponent(node: SingleASTNode) {
 
   switch (type) {
     case "text":
-      return node.content;
+      return h("span", node.content);
     case "link":
     case "url":
     case "autolink":
@@ -102,7 +102,7 @@ function getComponent(node: SingleASTNode) {
         node.content.map((n: SingleASTNode) => getComponent(n))
       );
     default:
-      return h("span", () => "NOT IMPLEMENTED YET: " + type);
+      return h("span", "NOT IMPLEMENTED YET: " + type);
   }
 }
 </script>
