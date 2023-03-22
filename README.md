@@ -20,7 +20,7 @@ a minimal and serverless [modmail](https://github.com/modmail-dev/modmail) logvi
 
 1. Fork this repository.
 
-2. Log in to <https://netlify.app/>.
+2. Log in to <https://netlify.app>.
 
 3. Go to <https://app.netlify.com/start> and select your forked repository.
 
