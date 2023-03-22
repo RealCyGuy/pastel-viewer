@@ -4,11 +4,17 @@ a minimal and serverless [modmail](https://github.com/modmail-dev/modmail) logvi
 
 ## Features
 
+- Fully serverless so you can host for free on many platforms
 - Good design
 - Full Discord markdown support including emojis, mentions, code blocks, timestamps, spoilers, and quote blocks
 - Right-click context menus for copying messages, links, and ids
 - Thread stats
 - NSFW thread warning
+
+## Planned features
+
+- Dark theme
+- Authentication
 
 ## Installation
 
